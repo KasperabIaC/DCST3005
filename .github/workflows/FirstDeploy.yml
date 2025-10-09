@@ -29,19 +29,19 @@ jobs:
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Terraform Init
-        working-directory: ./module06/terraform-projects/rg
+        working-directory: module06/terraform-projects/rg
         run: terraform init -input=false
 
       - name: Terraform Validate
-        working-directory: ./module06/terraform-projects/rg
+        working-directory: module06/terraform-projects/rg
         run: terraform validate
 
       - name: Terraform Plan (hardcoded vars)
-        working-directory: ./module06/terraform-projects/rg
+        working-directory: module06/terraform-projects/rg
         run: terraform plan
 
       - name: Terraform Apply (only on main)
         if: github.ref == 'refs/heads/main'
-        working-directory: ./module06/terraform-projects/rg
+        working-directory: module06/terraform-projects/rg
         run: terraform apply -auto-approve
 
