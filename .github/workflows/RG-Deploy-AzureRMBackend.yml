@@ -13,8 +13,8 @@ jobs:
     environment: dev
     env:
       # Oppdater disse to stiene til din repo-struktur
-      WORKDIR: "DCST3005/module06/terraform-projects/rg"
-      BACKEND_HCL: "DCST3005/module06/terraform-projects/shared/backend.hcl"
+      WORKDIR: "module06/terraform-projects/rg"
+      BACKEND_HCL: "module06/terraform-projects/shared/backend.hcl"
       
     steps:
       - name: Checkout
@@ -75,3 +75,4 @@ jobs:
         if: github.ref == 'refs/heads/main'
         working-directory: ${{ env.WORKDIR }}
         run: terraform apply -auto-approve -input=false
+
