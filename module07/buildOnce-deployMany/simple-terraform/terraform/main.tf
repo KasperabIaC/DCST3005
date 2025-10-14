@@ -36,7 +36,7 @@ resource "azurerm_storage_account" "main" {
 
 # Storage Container
 resource "azurerm_storage_container" "demo" {
-  name                  = "demo-data"
+  name                  = "kab-demo-data"
   storage_account_id   = azurerm_storage_account.main.id
   container_access_type = "private"
 }
